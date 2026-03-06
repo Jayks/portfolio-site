@@ -25,7 +25,14 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+
+# personal/temp files
+linkedin.pdf
+linkedin_profile_utf8.txt
+read_pdf.py
+read_pdf.js
 
 # vercel
 .vercel
