@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import DigitalTwinChat from "@/components/DigitalTwinChat";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased min-h-screen bg-background text-foreground selection:bg-sky-500/30 selection:text-sky-200`}
       >
         {children}
+        <DigitalTwinChat />
       </body>
     </html>
   );

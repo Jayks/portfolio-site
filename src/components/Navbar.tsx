@@ -11,6 +11,7 @@ const navLinks = [
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Portfolio", href: "#portfolio" },
+    { name: "Digital Twin", href: "#" },
 ];
 
 export default function Navbar() {
@@ -53,13 +54,19 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                         >
-                            <Link
-                                href={link.href}
+                            <button
+                                onClick={() => {
+                                    if (link.name === "Digital Twin") {
+                                        window.dispatchEvent(new CustomEvent("open-digital-twin"));
+                                    } else {
+                                        window.location.hash = link.href;
+                                    }
+                                }}
                                 className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sky-500 transition-all group-hover:w-full" />
-                            </Link>
+                            </button>
                         </motion.div>
                     ))}
                 </nav>
@@ -83,14 +90,20 @@ export default function Navbar() {
                 >
                     <div className="px-6 py-4 flex flex-col gap-4">
                         {navLinks.map((link) => (
-                            <Link
+                            <button
                                 key={link.name}
-                                href={link.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="text-lg font-medium text-slate-300 hover:text-sky-400"
+                                onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    if (link.name === "Digital Twin") {
+                                        window.dispatchEvent(new CustomEvent("open-digital-twin"));
+                                    } else {
+                                        window.location.hash = link.href;
+                                    }
+                                }}
+                                className="text-lg font-medium text-slate-300 hover:text-sky-400 text-left"
                             >
                                 {link.name}
-                            </Link>
+                            </button>
                         ))}
                     </div>
                 </motion.div>
