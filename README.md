@@ -3,7 +3,7 @@
 A premium, modern portfolio website built for a Strategic Data & AI Leader. This project focuses on high visual impact, smooth user experience, and professional storytelling.
 
 ## 🚀 Live Demo
-[View Live Site on Vercel](https://portfolio-site-eta-eight.vercel.app/) *(Insert your actual Vercel URL here if different)*
+[View Live Site on Vercel](https://portfolio-site-bay-gamma.vercel.app/) *(Insert your actual Vercel URL here if different)*
 
 ## ✨ Key Features
 - **Dynamic Hero Section**: Impactful introduction for a Data & AI Strategy Leader.
