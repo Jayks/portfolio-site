@@ -132,7 +132,7 @@ export default function SkillsSection() {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-8">
                     {/* Certifications */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export default function SkillsSection() {
                             </div>
                             <h3 className="text-xl font-bold text-white">Certifications</h3>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {certifications.map((cert, index) => (
                                 <div key={index} className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all group">
                                     <ShieldCheck size={16} className="text-emerald-500 opacity-50 group-hover:opacity-100" />
@@ -154,29 +154,6 @@ export default function SkillsSection() {
                                         <p className="text-sm font-bold text-slate-200 leading-tight">{cert.title}</p>
                                         <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">{cert.issuer}</p>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Languages & Platforms */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="glass-card p-8"
-                    >
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="p-3 rounded-2xl bg-sky-500/10 border border-sky-500/20">
-                                <Globe className="text-sky-500" size={24} />
-                            </div>
-                            <h3 className="text-xl font-bold text-white">Global Communication</h3>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {languages.map((lang, index) => (
-                                <div key={index} className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
-                                    <p className="text-sm font-bold text-white">{lang.name}</p>
-                                    <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">{lang.level}</p>
                                 </div>
                             ))}
                         </div>
