@@ -33,6 +33,10 @@ linkedin.pdf
 linkedin_profile_utf8.txt
 read_pdf.py
 read_pdf.js
+"Jayakumar Sekar_Resume.pdf"
+"Data & AI Transformation Portfolio Case studies.txt"
+resume_text.txt
+extract_resume.py
 
 # vercel
 .vercel
@@ -44,3 +48,5 @@ next-env.d.ts
 # IDEs
 .vscode/
 .idea/
+
+Data/
