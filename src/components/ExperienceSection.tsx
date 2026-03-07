@@ -10,55 +10,57 @@ const experiences = [
         duration: "April 2025 - Present",
         description: [
             "Own delivery and business outcomes for enterprise analytics and BI transformation programs across Insurance and Financial Services.",
-            "Led organization-wide GenAI enablement strategy, shaping market-ready Agentic AI accelerators.",
-            "Drove margin optimization, exceeding forecast through capacity planning and execution governance."
+            "Led large-scale BI modernization and cloud governance initiatives, improving delivery predictability and cost control.",
+            "Drove margin optimization exceeding forecast through capacity planning, delivery discipline, and execution governance.",
+            "Led organization-wide GenAI enablement strategy, including curriculum design and leadership alignment.",
+            "Spearheaded Agentic AI accelerator strategy, shaping market-ready solutions and supporting go-to-market positioning."
         ]
     },
     {
         company: "LatentView Analytics",
         role: "Associate Director",
-        duration: "April 2023 - April 2025",
+        duration: "August 2019 - April 2025",
         description: [
-            "Led a $10M multi-client portfolio, scaling 100+ Data Engineers and Data Scientists.",
+            "Led a $10M multi-client portfolio, ensuring delivery excellence and team scalability while maintaining high CSAT.",
             "Partnered with senior business stakeholders to define analytics roadmaps aligned to revenue growth and operational efficiency.",
-            "Enabled enterprise-wide transformation in Predictive Analytics, BI, and GenAI & LLM-based solutions."
+            "Scaled and led 100+ Data Engineers and Data Scientists, focusing on leadership development and capability maturity.",
+            "Enabled enterprise-wide transformation across Cloud Analytics, Predictive Intelligence, and GenAI/LLM-based solutions.",
+            "Championed analytics adoption and value realization through executive storytelling and POV/POC strategies."
         ]
     },
     {
-        company: "LatentView Analytics",
-        role: "Analytics Manager",
-        duration: "August 2019 - March 2023",
+        company: "Cognizant Technology Solutions",
+        role: "Project Manager",
+        duration: "April 2015 - July 2019",
         description: [
-            "Drove complex analytics deliveries and mentored teams on problem framing, solution design, and analytical rigor.",
-            "Championed analytics adoption and value realization across clients."
+            "Led the design and adoption of advanced machine learning solutions, ensuring models were aligned to measurable business objectives.",
+            "Mentored and coached data scientists and analysts on problem framing, solution design, and analytical rigor.",
+            "Drove proof-of-value and proof-of-concept initiatives to accelerate stakeholder buy-in and informed decision-making.",
+            "Established ML-driven automation frameworks to eliminate manual workflows and improve operational efficiency.",
+            "Led Quarterly Business Reviews (QBRs) with clients, delivering insights on revenue trends and growth opportunities."
         ]
     },
     {
-        company: "Cognizant",
-        role: "Manager",
-        duration: "June 2018 - July 2019",
+        company: "Cognizant Technology Solutions",
+        role: "Onsite Lead (USA)",
+        duration: "February 2008 - April 2015",
         description: [
-            "Led the design and adoption of advanced machine learning solutions.",
-            "Mentored and coached data scientists, driving proof-of-value and proof-of-concept initiatives."
+            "Led a $3M multi-year managed services engagement for a large insurance client, ensuring delivery stability and quality.",
+            "Provided technical and delivery leadership to a 30-member offshore team within the Claims portfolio.",
+            "Established testing and quality assurance frameworks ensuring robust validation across critical mainframe and Oracle systems.",
+            "Translated complex business requirements into scalable solution designs through structured gap assessment and stakeholder interviews.",
+            "Managed project governance, risks, and executive reporting to ensure transparency and alignment across global stakeholders."
         ]
     },
     {
-        company: "Cognizant",
-        role: "Technical Lead & Onsite Manager",
-        duration: "February 2008 - May 2018",
-        description: [
-            "Led a $3M multi-year managed services engagement for a large insurance client.",
-            "Provided technical leadership to a 30-member offshore team.",
-            "Established testing, quality assurance frameworks, and automated operational processes."
-        ]
-    },
-    {
-        company: "Cognizant",
-        role: "Associate",
-        duration: "February 2005 - February 2008",
+        company: "Cognizant Technology Solutions",
+        role: "Analyst / Developer",
+        duration: "April 2005 - February 2008",
         description: [
             "Owned end-to-end support, enhancement, and modernization of mission-critical mainframe applications.",
-            "Designed and built new system interfaces supporting evolving business needs."
+            "Performed impact and feasibility analysis for credit risk-related algorithms supporting business decisions.",
+            "Analyzed end-to-end data flows across heterogeneous systems enabling smooth integration.",
+            "Designed, built, and validated new system interfaces to support evolving business needs."
         ]
     }
 ];
@@ -106,28 +108,27 @@ export default function ExperienceSection() {
                 >
                     {experiences.map((exp, index) => (
                         <motion.div key={index} variants={itemVariants} className="relative pl-8 md:pl-12">
-                            <div className="absolute -left-4 top-1 w-8 h-8 rounded-full bg-slate-900 border border-sky-500 flex items-center justify-center text-sky-500">
+                            <div className="absolute -left-4 top-1 w-8 h-8 rounded-full bg-slate-900 border border-sky-500 flex items-center justify-center text-sky-500 z-10">
                                 <Briefcase size={14} />
                             </div>
 
                             <div className="glass-card p-6 md:p-8 relative group hover:border-sky-500/30 transition-colors">
-                                {/* Glow effect on hover */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-sky-500/0 via-sky-500/0 to-emerald-500/0 group-hover:from-sky-500/5 group-hover:to-emerald-500/5 rounded-2xl transition-all duration-500 pointer-events-none" />
 
                                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                                     <div>
-                                        <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                                        <h4 className="text-lg font-medium text-sky-400">{exp.company}</h4>
+                                        <h3 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">{exp.role}</h3>
+                                        <h4 className="text-lg font-medium text-slate-300">{exp.company}</h4>
                                     </div>
-                                    <span className="inline-block px-3 py-1 rounded-full bg-white/5 text-slate-300 text-sm border border-white/10 whitespace-nowrap">
+                                    <span className="inline-block px-3 py-1 rounded-full bg-white/5 text-slate-400 text-sm border border-white/10 whitespace-nowrap">
                                         {exp.duration}
                                     </span>
                                 </div>
 
-                                <ul className="space-y-2 mt-4 text-slate-400 text-sm md:text-base">
+                                <ul className="space-y-3 mt-4 text-slate-400 text-sm md:text-base">
                                     {exp.description.map((item, i) => (
                                         <li key={i} className="flex items-start">
-                                            <span className="text-emerald-500 mr-2 mt-1">▹</span>
+                                            <span className="text-sky-500 mr-2 mt-1 flex-shrink-0">▹</span>
                                             <span>{item}</span>
                                         </li>
                                     ))}

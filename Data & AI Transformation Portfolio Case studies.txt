@@ -1,0 +1,191 @@
+Data & AI Transformation Portfolio
+
+
+Case Study 1: Enterprise Data Platform Modernization
+Client: Global Foodservice Distribution Leader
+Role: Engagement Lead / Delivery Oversight
+
+Business Challenge
+
+Legacy and siloed data systems prevented a unified view of customers and operations.
+
+Limited ability to predict and prevent customer churn in a competitive distribution market.
+
+Slow data processing restricted real-time operational decision-making across supply chain and sales teams.
+
+Solution Delivered
+
+Led the modernization of the enterprise data platform and analytics ecosystem.
+
+Built a cloud-native data lake on Amazon Web Services consolidating enterprise datasets.
+
+Enabled advanced analytics and machine learning models to detect churn signals and customer trends.
+
+Delivered integrated analytics for supply chain visibility and commercial performance insights.
+
+Impact
+
+Enabled predictive customer retention insights for proactive engagement.
+
+Improved operational visibility across distribution and supply chain networks.
+
+Established a scalable enterprise data platform supporting large-scale analytics workloads.
+
+
+
+
+Case Study 2: Databricks Data Platform Modernization
+Client: Global Automobile Enterprise
+Role: Delivery head / Program Management, Platform Modernization
+
+Business Challenge
+
+Slow and inefficient data pipelines delayed analytics and reporting.
+
+High infrastructure costs due to inefficient legacy processing frameworks.
+
+Fragmented governance and access controls across enterprise data assets.
+
+Solution Delivered
+
+Modernized the platform on Databricks with scalable pipelines using Apache Spark.
+
+Implemented Unity Catalog to enable centralized governance and fine-grained data access control.
+
+Introduced CI/CD automation for reliable and standardized deployments.
+
+Built a modular pipeline framework to accelerate development of new data products.
+
+Impact
+
+Platform modernization delivered in < 2 months.
+
+3–5× faster pipeline execution and improved data availability.
+
+30–40% reduction in compute costs through optimized processing.
+
+Created a scalable foundation for analytics and AI initiatives.
+
+
+
+Case Study 3: Enterprise BI Modernization – Tableau to Power BI Migration
+Client: Global Insurer
+Role: Program Lead / Delivery Oversight
+
+Business Challenge
+
+The organization had ~1000 dashboards built on Tableau, resulting in high licensing and infrastructure costs.
+
+Limited integration with the Microsoft analytics ecosystem, making collaboration and governance difficult.
+
+Inconsistent data models and duplicated logic across dashboards caused maintenance challenges and reporting inconsistencies.
+
+Business teams required scalable, governed, and cost-efficient BI capabilities.
+
+Solution Delivered
+
+Led the enterprise migration program to transition dashboards from Tableau to Microsoft Power BI.
+
+Developed a migration framework including dashboard inventory, complexity classification, and automated conversion accelerators.
+
+Standardized data models, semantic layers, and reporting templates to ensure consistency.
+
+Implemented governance and security controls integrated with the Microsoft ecosystem.
+
+Established agile delivery pods to accelerate migration across multiple business units.
+
+Impact
+
+Successfully migrated ~1000 dashboards to Power BI with minimal disruption to business users.
+
+Reduced BI licensing and operational costs through platform consolidation.
+
+Improved report performance, scalability, and user adoption.
+
+Enabled centralized governance and standardized semantic models for enterprise reporting.
+
+Delivered a future-ready analytics environment aligned with the Microsoft data platform.
+
+
+
+
+Case Study 4: R&D Knowledge Digitization & Retrieval Platform
+Client: Global Oil and Gas Company
+Role: Engagement Lead / Analytics Program Oversight
+
+Problem Statement
+
+Critical R&D experiment results and chemical formulations were stored in physical documents and scanned PDFs, making access difficult.
+
+Due to the lab environment, experiments were not digitally logged, resulting in fragmented information across multiple formats.
+
+Absence of a centralized repository or single source of truth for experimental data.
+
+Scientists often repeated experiments unknowingly, leading to wasted time, cost, and research effort.
+
+Solution
+
+Led the development of an automated R&D knowledge digitization platform to extract and structure historical research data.
+
+Implemented OCR-based extraction to digitize experiment results and chemical formulation details from scanned documents and PDFs.
+
+Built an entity mapping framework to structure experimental data, relationships, and research context.
+
+Stored structured research knowledge in Neo4j graph database to capture relationships between compounds, experiments, and results.
+
+Developed a web-based knowledge portal enabling researchers to search and retrieve experiment data.
+
+Integrated an AI-powered chatbot interface to allow scientists to ask natural language questions about historical experiments and formulations.
+
+Key Achievements
+
+Digitized and structured previously inaccessible R&D knowledge from legacy documents.
+
+Established a centralized knowledge repository for experimental research data.
+
+Reduced duplicate experimentation and research effort by enabling experiment discovery.
+
+Improved research efficiency and knowledge sharing across R&D teams.
+
+Created a scalable knowledge graph foundation for future AI-driven scientific insights.
+
+
+
+Case Study 5: Enterprise Knowledge Chatbot for Technical Documentation
+
+Industry: Specialty Chemicals / Manufacturing
+Role: Engagement Lead / Data Engineering & AI Solution Oversight
+
+Problem Statement
+
+Technical product information such as installation guides, maintenance manuals, instruction documents, and FAQs were stored across multiple formats and repositories.
+
+Engineers and support teams struggled to quickly locate accurate information from large volumes of documentation.
+
+Manual search across PDF, Word, and Excel files slowed troubleshooting and customer support processes.
+
+The organization required a self-service knowledge access solution for employees and support teams.
+
+Solution
+
+Led the development of an enterprise knowledge chatbot platform using Microsoft Azure cloud architecture.
+
+Built automated pipelines to parse and index technical documents including PDFs, Word files, Excel sheets, and FAQs.
+
+Structured and ingested curated knowledge into QnA Maker to enable conversational question-answering capabilities.
+
+Developed a chatbot interface that allowed users to retrieve answers through natural language queries.
+
+Enhanced the system with NLP capabilities to improve intent detection and extract precise answers from technical documentation.
+
+Key Achievements
+
+Enabled conversational access to large volumes of technical documentation.
+
+Reduced time required for engineers and support teams to locate relevant information.
+
+Improved customer support efficiency and internal knowledge discovery.
+
+Established an early enterprise chatbot capability prior to modern LLM-based solutions.
+
+Created a scalable framework for AI-driven knowledge management and support automation.
