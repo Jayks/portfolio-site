@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Code2, Award, Zap, Languages, Brain, Binary, Globe, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Code2, Award, Zap, Languages, Brain, Binary, Globe, ShieldCheck, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const skillGroups = [
     {
@@ -46,18 +48,36 @@ const skillGroups = [
 ];
 
 const certifications = [
-    { title: "Databricks Certified Generative AI Engineer Associate", issuer: "Databricks" },
-    { title: "Databricks Certified Machine Learning Associate", issuer: "Databricks" },
-    { title: "Databricks Certified Data Engineer Associate", issuer: "Databricks" },
-    { title: "Deep Learning with TensorFlow", issuer: "Coursera" },
-    { title: "Building Resilient Streaming Systems", issuer: "Google Cloud Platform" }
-];
-
-const languages = [
-    { name: "English", level: "Professional" },
-    { name: "Tamil", level: "Professional" },
-    { name: "Telugu", level: "Native" },
-    { name: "Hindi", level: "Elementary" }
+    {
+        title: "Databricks Certified Generative AI Engineer Associate",
+        issuer: "Databricks",
+        badge: "/certs/genai-badge.png",
+        fullCert: "/certs/genai-cert.png"
+    },
+    {
+        title: "Databricks Certified Machine Learning Associate",
+        issuer: "Databricks",
+        badge: "/certs/ml-badge.png",
+        fullCert: "/certs/ml-cert.png"
+    },
+    {
+        title: "Databricks Certified Data Engineer Associate",
+        issuer: "Databricks",
+        badge: "/certs/data-engineer-badge.png",
+        fullCert: "/certs/data-engineer-cert.png"
+    },
+    {
+        title: "Deep Learning with TensorFlow",
+        issuer: "Coursera",
+        badge: null,
+        fullCert: null
+    },
+    {
+        title: "Building Resilient Streaming Systems",
+        issuer: "Google Cloud Platform",
+        badge: null,
+        fullCert: null
+    }
 ];
 
 const containerVariants = {
@@ -74,6 +94,8 @@ const itemVariants = {
 };
 
 export default function SkillsSection() {
+    const [selectedCert, setSelectedCert] = useState<typeof certifications[0] | null>(null);
+
     return (
         <section id="skills" className="py-24 bg-slate-950 border-y border-white/5 relative overflow-hidden">
             {/* Background elements */}
@@ -146,20 +168,86 @@ export default function SkillsSection() {
                             </div>
                             <h3 className="text-xl font-bold text-white">Certifications</h3>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {certifications.map((cert, index) => (
-                                <div key={index} className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all group">
-                                    <ShieldCheck size={16} className="text-emerald-500 opacity-50 group-hover:opacity-100" />
-                                    <div>
-                                        <p className="text-sm font-bold text-slate-200 leading-tight">{cert.title}</p>
-                                        <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">{cert.issuer}</p>
+                                <motion.div
+                                    key={index}
+                                    layoutId={cert.fullCert ? `cert-${index}` : undefined}
+                                    onClick={() => cert.fullCert && setSelectedCert(cert)}
+                                    className={cn(
+                                        "flex items-center gap-4 p-5 rounded-2xl bg-white/5 border border-white/5 transition-all group relative overflow-hidden",
+                                        cert.fullCert ? "cursor-pointer hover:border-emerald-500/40 hover:bg-white/10" : "cursor-default"
+                                    )}
+                                >
+                                    <div className="flex-shrink-0 relative w-12 h-12 flex items-center justify-center">
+                                        {cert.badge ? (
+                                            <img src={cert.badge} alt={cert.title} className="w-12 h-12 object-contain group-hover:scale-110 transition-transform" />
+                                        ) : (
+                                            <div className="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center text-slate-500">
+                                                <ShieldCheck size={20} />
+                                            </div>
+                                        )}
                                     </div>
-                                </div>
+                                    <div className="flex-grow">
+                                        <p className="text-sm font-bold text-slate-200 leading-tight group-hover:text-white transition-colors">
+                                            {cert.title}
+                                        </p>
+                                        <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-1.5 flex items-center gap-2">
+                                            {cert.issuer}
+                                            {cert.fullCert && (
+                                                <span className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                                                    &bull; Click to view
+                                                </span>
+                                            )}
+                                        </p>
+                                    </div>
+                                </motion.div>
                             ))}
                         </div>
                     </motion.div>
                 </div>
             </div>
+
+            {/* Certificate Preview Modal */}
+            <AnimatePresence>
+                {selectedCert && selectedCert.fullCert && (
+                    <div className="fixed inset-0 z-[400] flex items-center justify-center p-4 md:p-12">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedCert(null)}
+                            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+                        />
+
+                        <motion.div
+                            layoutId={`cert-${certifications.indexOf(selectedCert)}`}
+                            className="relative w-full max-w-6xl max-h-[90vh] bg-slate-950 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col"
+                        >
+                            <div className="p-6 border-b border-white/5 flex items-center justify-between bg-slate-950/80 backdrop-blur-md">
+                                <div>
+                                    <h2 className="text-xl font-bold text-white">{selectedCert.title}</h2>
+                                    <p className="text-sm text-slate-400">{selectedCert.issuer}</p>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedCert(null)}
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            <div className="flex-grow overflow-auto p-4 md:p-8 flex items-center justify-center bg-black/40">
+                                <img
+                                    src={selectedCert.fullCert}
+                                    alt={selectedCert.title}
+                                    className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border border-white/5"
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
