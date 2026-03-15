@@ -11,11 +11,15 @@ A premium, modern portfolio website built for a Strategic Data & AI Leader. This
 - **Capabilities Grid**: Visual categorization of core competencies, certifications, and languages.
 - **Glassmorphism Design**: Sleek, modern UI with blurred backgrounds and neon-tinted accents.
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile viewing.
+- **Digital Twin Chat**: AI-powered personal assistant sharing insights from Jayakumar's 20-year journey.
+- **Real-time Notifications**: Instant Telegram alerts for new visits (with location/source tracking) and chat interactions.
 - **Micro-Animations**: Smooth entry and scroll animations powered by Framer Motion.
 
 ## 🛠️ Technology Stack
 - **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **AI**: OpenAI API with [Vercel AI SDK](https://sdk.vercel.ai/)
+- **Notifications**: Telegram Bot API
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Typography**: [Inter via Google Fonts](https://fonts.google.com/specimen/Inter)
